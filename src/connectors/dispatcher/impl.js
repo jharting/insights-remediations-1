@@ -52,11 +52,11 @@ module.exports = new class extends Connector {
         const uri = this.buildUri(host, 'playbook-dispatcher', 'v1', 'runs');
 
         if (filter) {
-            uri.addQuery(qs.stringify(filter, QSOPTIONS));
+            uri.search(qs.stringify(filter,  QSOPTIONS));
         }
 
         if (fields) {
-            uri.addQuery(qs.stringify(fields, QSOPTIONS));
+            uri.search(qs.stringify(fields, QSOPTIONS));
         }
 
         if (sort_by) {
@@ -83,11 +83,11 @@ module.exports = new class extends Connector {
         const uri = this.buildUri(host, 'playbook-dispatcher', 'v1', 'run_hosts');
 
         if (filter) {
-            uri.addQuery(qs.stringify(filter, QSOPTIONS));
+            uri.search(qs.stringify(filter, QSOPTIONS));
         }
 
         if (fields) {
-            uri.addQuery(qs.stringify(fields, QSOPTIONS));
+            uri.search(qs.stringify(fields, QSOPTIONS));
         }
 
         const options = {

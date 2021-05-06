@@ -122,7 +122,7 @@ describe('dispatcher impl', function () {
                 headers: {}
             });
 
-            const results = await impl.fetchPlaybookRuns();
+            const results = await impl.fetchPlaybookRuns({filter: {service: 'remediations'}});
             results.data.should.have.size(2);
 
             const result1 = results.data[0];
